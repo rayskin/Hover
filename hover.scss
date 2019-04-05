@@ -1,0 +1,28 @@
+// =========================================
+// HOVER MIXIN
+// =========================================
+@mixin hover {
+  // POINT & CLICK HOVER DEVICES
+  @media (hover:hover) {
+    &:hover {
+      @content;
+    }
+  }
+  // IE 11 FRIENDLY
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    &:hover {
+      @content;
+    }
+  }
+}//mixin:hover
+
+
+// =========================================
+// EXAMPLE
+// =========================================
+a {
+  text-decoration: none;
+  @include hover {
+    text-decoration: underline;
+  }
+}
